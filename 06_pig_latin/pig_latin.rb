@@ -1,8 +1,8 @@
 #write your code here
-def count_conson(i)
+def count_conson(str_input)
 	y = 0
-	while y <= i.size
-		if i[y] == "i" || i[y] == "o" || i[y] == "a" || i[y] == "e" || i[y] == "y"
+	while y <= str_input.size
+		if str_input[y] == "i" || str_input[y] == "o" || str_input[y] == "a" || str_input[y] == "e" || str_input[y] == "y"
 			return y
 		end
 		y += 1
@@ -10,22 +10,20 @@ def count_conson(i)
 	return y
 end
 
-def calcul(i)
-	y = count_conson(i)
-	u = i[y..i.size]
+def calcul(str)
+	y = count_conson(str)
+	word_end = str[y..str.size]
 	if y != 0
-		j = i[0..y-1]
+		word_begin = str[0..y-1]
 	end
-
-	uu = u.to_s
-	jj = j.to_s
-
-	return uu + jj + "ay"
+	word_end_string = word_end.to_s
+	word_begin_string = word_begin.to_s
+	return word_end_string + word_begin_string + "ay"
 end
 
-def translate(i)
+def translate(str_input)
 	tab = []
-	tab = i.split
+	tab = str_input.split
 	str = ""
 	y = 0
 	while y < tab.size
